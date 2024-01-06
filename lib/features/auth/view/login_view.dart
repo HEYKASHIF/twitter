@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter/common/rounded_small_button.dart';
-import 'package:twitter/constants/ui_constants.dart';
+import 'package:twitter/constants/constants.dart';
 import 'package:twitter/features/auth/widgets/auth_field.dart';
 import 'package:twitter/theme/theme.dart';
 
