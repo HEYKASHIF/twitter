@@ -63,14 +63,14 @@ class _LoginViewState extends State<LoginView> {
                 ),
                 RichText(
                   text: const TextSpan(
-                      text: 'Already have an account?',
+                      text: 'Dont have an account?',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                       children: [
                         TextSpan(
-                            text: ' Login',
+                            text: ' SignUp',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
