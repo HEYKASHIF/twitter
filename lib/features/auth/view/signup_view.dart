@@ -8,6 +8,9 @@ import '../../../theme/theme.dart';
 import '../widgets/auth_field.dart';
 
 class SignUpView extends StatefulWidget {
+  static route() => MaterialPageRoute(
+        builder: (context) => const SignUpView(),
+      );
   const SignUpView({super.key});
 
   @override

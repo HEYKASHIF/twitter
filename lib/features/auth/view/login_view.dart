@@ -1,6 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter/common/rounded_small_button.dart';
 import 'package:twitter/constants/constants.dart';
+import 'package:twitter/features/auth/view/signup_view.dart';
 import 'package:twitter/features/auth/widgets/auth_field.dart';
 import 'package:twitter/theme/theme.dart';
 
@@ -65,20 +67,25 @@ class _LoginViewState extends State<LoginView> {
                   height: 40,
                 ),
                 RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                       text: 'Dont have an account?',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                       children: [
                         TextSpan(
-                            text: ' SignUp',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Pallete.blueColor,
-                            ))
+                          text: ' SignUp',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Pallete.blueColor,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(context, SignUpView.route());
+                            },
+                        )
                       ]),
                 )
               ],
