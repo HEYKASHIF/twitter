@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:twitter/common/common.dart';
+import 'package:twitter/features/auth/view/login_view.dart';
 
 import '../../../constants/ui_constants.dart';
 import '../../../theme/theme.dart';
@@ -13,10 +15,6 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
-
-
-
-
   final appbar = UIConstants.appBar();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -67,20 +65,28 @@ class _SignUpViewState extends State<SignUpView> {
                   height: 40,
                 ),
                 RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                       text: 'Already have an account?',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
                       children: [
                         TextSpan(
-                            text: ' Login',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Pallete.blueColor,
-                            ))
+                          text: ' Login',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Pallete.blueColor,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                LoginView.route(),
+                              );
+                            },
+                        )
                       ]),
                 )
               ],
